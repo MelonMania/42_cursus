@@ -6,13 +6,13 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:24:56 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 17:52:12 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/09 20:10:49 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*src;
 	unsigned char	find;

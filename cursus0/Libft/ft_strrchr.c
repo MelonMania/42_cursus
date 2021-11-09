@@ -6,11 +6,11 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:03:21 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 17:11:34 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/09 20:09:41 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

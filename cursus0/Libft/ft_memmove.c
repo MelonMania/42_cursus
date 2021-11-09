@@ -6,11 +6,11 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 08:34:30 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 15:42:53 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/09 20:09:54 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {

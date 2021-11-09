@@ -6,9 +6,11 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 07:37:03 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 07:39:17 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/09 20:13:40 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

@@ -6,9 +6,11 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 07:28:20 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 07:36:19 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/09 20:09:20 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

@@ -6,11 +6,11 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 06:43:24 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 07:21:16 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/09 20:09:50 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	*ft_memset(void *dest, int c, size_t n)
 {

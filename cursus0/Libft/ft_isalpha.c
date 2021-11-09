@@ -6,13 +6,15 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 07:21:47 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 07:36:26 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/09 20:09:18 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isalpha(int c)
 {
-	if ((src >= 'a' && src <= 'z') || (src >= 'A' && src <= 'Z'))
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
 	return (0);
 }

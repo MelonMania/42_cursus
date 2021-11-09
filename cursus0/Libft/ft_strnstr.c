@@ -6,11 +6,11 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:53:23 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 18:36:45 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/09 20:09:39 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

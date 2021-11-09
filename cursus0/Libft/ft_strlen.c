@@ -6,11 +6,11 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 07:52:57 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 16:27:13 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/09 20:09:36 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

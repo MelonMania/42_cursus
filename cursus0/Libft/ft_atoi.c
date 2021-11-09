@@ -6,9 +6,11 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:37:26 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 18:48:00 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/09 20:09:04 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_calc(char *str, int i, int result)
 {
@@ -21,7 +23,7 @@ int	ft_calc(char *str, int i, int result)
 	return (result);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	n;

@@ -6,22 +6,22 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 07:57:59 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 08:04:59 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/09 20:09:10 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*dest;
+	unsigned char	*arr;
 	size_t			i;
 
-	dest = s;
+	arr = s;
 	i = 0;
 	while (i < n)
 	{
-		dest[i] = 0;
+		arr[i] = 0;
 		i++;
 	}
 }
