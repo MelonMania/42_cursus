@@ -6,7 +6,7 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 19:30:36 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 20:09:31 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/10 14:24:27 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,20 @@
 char	*ft_strdup(const char *s1)
 {
 	char	*cp;
+	size_t	i;
 
-	if (!s1)
-		return (0);
-	cp = malloc(sizeof(char) * ft_strlen(s1));
+	i = 0;
+	while (s1[i])
+		i++;
+	cp = (char *)malloc(sizeof(char) * (i + 1));
 	if (!cp)
 		return (0);
-	while (*s1 != '\0')
-		*cp++ = *s1++;
-	*cp = 0;
+	i = 0;
+	while (s1[i])
+	{
+		cp[i] = s1[i];
+		i++;
+	}
+	cp[i] = 0;
 	return (cp);
 }

@@ -6,7 +6,7 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 06:43:24 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 20:09:50 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/10 11:19:20 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	*ft_memset(void *dest, int c, size_t n)
 	unsigned char	src;
 	size_t			i;
 
-	n_dest = dest;
+	n_dest = (unsigned char *)dest;
 	src = c;
 	i = 0;
 	while (i++ < n)
 	{
 		*n_dest = src;
-		*n_dest++;
+		n_dest++;
 	}
 	return (dest);
 }

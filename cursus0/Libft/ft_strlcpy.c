@@ -6,7 +6,7 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 15:44:02 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 20:09:34 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/10 13:28:36 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned char	*m_dst;
-	size_t			len;
+	size_t	len;
 
-	m_dst = dst;
 	len = ft_strlen(src);
+	if (!src)
+		return (0);
 	if (dstsize == 0)
 		return (len);
-	while (dstsize-- > 1 || *src != '\0')
-	{
-		*m_dst++ = *src++;
-	}
-	*m_dst = 0;
+	while (dstsize-- > 1 && *src)
+		*dst++ = *src++;
+	*dst = 0;
 	return (len);
 }

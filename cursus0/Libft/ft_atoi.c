@@ -6,13 +6,13 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:37:26 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 20:09:04 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/10 12:13:17 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_calc(char *str, int i, int result)
+unsigned long int	ft_calc(const char *str, size_t i, unsigned long int result)
 {
 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 	{
@@ -25,14 +25,14 @@ int	ft_calc(char *str, int i, int result)
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	n;
-	int	result;
+	size_t				i;
+	int					n;
+	unsigned long int	result;
 
 	i = 0;
 	n = 1;
 	result = 0;
-	while (str[i] <= 32)
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 	{
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:24:56 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 20:10:49 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/10 12:36:52 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	find;
 	size_t			i;
 
-	find = c;
 	i = 0;
 	src = (unsigned char *)s;
-	if (n == 0)
-		return (0);
+	find = (unsigned char)c;
 	while (i < n && src[i])
 	{
-		if (src[i] == c)
-			return ((char *)s + i);
+		if (src[i] == find)
+			return ((unsigned char *)src + i);
 		i++;
 	}
 	return (0);

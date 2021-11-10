@@ -6,7 +6,7 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 08:34:30 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 20:09:54 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/10 11:44:30 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		m_dst = (unsigned char *)dst + (n - 1);
 		m_src = (unsigned char *)src + (n - 1);
 		while (i++ < n)
-			*m_dst-- = *m_src--; // dst > src 이기에 src 뒤의것부터 dst의 뒤에서부터 값을 넣어준다.
+			*m_dst-- = *m_src--;
 	}
 	return (dst);
 }

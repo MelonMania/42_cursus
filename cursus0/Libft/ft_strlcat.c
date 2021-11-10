@@ -6,7 +6,7 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 15:55:54 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 20:09:32 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/10 13:24:48 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t			d_len;
-	size_t			s_len;
-	unsigned char	*m_dst;
+	size_t		d_len;
+	size_t		s_len;
 
-	m_dst = dst;
 	d_len = ft_strlen(dst);
 	s_len = ft_strlen(src);
 	if (!src)
 		return (0);
 	if (dstsize == 0)
 		return (s_len);
-	if (d_len >= dstsize)
+	if (d_len > dstsize)
 		return (dstsize + s_len);
-	while (*m_dst)
-		m_dst++;
-	while (dstsize-- - d_len > 1)
+	while (*dst)
+		dst++;
+	while (dstsize-- - d_len > 1 && *src)
 	{
-		*m_dst++ = *src++;
+		*dst++ = *src++;
 	}
-	*m_dst = 0;
+	*dst = 0;
 	return (d_len + s_len);
 }

@@ -6,7 +6,7 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 16:43:04 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/09 20:09:28 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/10 14:00:34 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,22 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*m_s;
 	char	find;
+	char	*str;
+	size_t	i;
+	int		len;
 
-	m_s = (char *)s;
+	i = 0;
+	str = (char *)s;
+	len = ft_strlen(str);
 	find = (char)c;
-	while (*m_s++)
+	if (!find)
+		return (&str[len]);
+	while (str[i])
 	{
-		if (*m_s == find)
-			return (*m_s);
+		if (str[i] == find)
+			return (&str[i]);
+		i++;
 	}
 	return (0);
 }
