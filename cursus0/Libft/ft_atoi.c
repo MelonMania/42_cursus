@@ -6,13 +6,14 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:37:26 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/10 12:13:17 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/11 21:23:45 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned long int	ft_calc(const char *str, size_t i, unsigned long int result)
+static unsigned long int	ft_calc(const char *str, size_t i,
+							unsigned long int result)
 {
 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 	{
