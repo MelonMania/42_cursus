@@ -1,27 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 20:05:13 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/16 21:12:24 by wolee            ###   ########seoul.kr  */
+/*   Created: 2021/11/16 20:37:25 by wolee             #+#    #+#             */
+/*   Updated: 2021/11/16 21:36:33 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_print_nbr(int n, int fd)
 {
-	unsigned int	i;
+	char	c;
 
-	i = 0;
-	if (!s || !f)
-		return ;
-	while (*s)
+	c = 48 + (n % 10);
+	write(fd, &c, 1);
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
 	{
-		f(i, s + i);
-		i++;
+		ft_putnbr_fd(n / 10, fd);
+		write(fd, "8", 1);
+		return ;
+	}
+	else if (n < 0)
+	{
+		n *= -1;
+		write(fd, "-", 1);
+		ft_putnbr_fd(n, fd);
+	}
+	else if (n > 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_print_nbr(n, fd);
+	}
+	else if (n < 10)
+	{
+		ft_print_nbr(n, fd);
+		return ;
 	}
 }

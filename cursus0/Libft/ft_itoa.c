@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 14:58:26 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/12 16:58:48 by wolee            ###   ########seoul.kr  */
+/*   Created: 2021/11/16 19:58:17 by wolee             #+#    #+#             */
+/*   Updated: 2021/11/16 21:13:17 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	*ft_get_string(int n, int len, char *str)
 {
-	int		value;
+	int	value;
 
 	str[len--] = 0;
 	if (n == 0)
