@@ -6,7 +6,7 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:45:27 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/12 14:56:54 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/17 02:22:09 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,17 @@ static int	ft_wordcount(char *s, char c)
 	return (word_count);
 }
 
-static	int	ft_word_len(char *s, char c)
+static int	ft_wordlen(char *s, char c, int l)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	while (s[i] != c || s[i] != '\0')
+	len = 0;
+	while (s[l] != c || s[l] != '\n')
 	{
-		i++;
+		l++;
+		len++;
 	}
-	return (i);
+	return (len);
 }
 
 static void	*ft_free(char **result, int word_count)
@@ -45,7 +46,7 @@ static void	*ft_free(char **result, int word_count)
 	int	i;
 
 	i = 0;
-	while (i < word_count)
+	while (i <= word_count)
 	{
 		free(result[i]);
 		i++;
@@ -56,24 +57,29 @@ static void	*ft_free(char **result, int word_count)
 
 static char	**ft_get_result(char **result, char *s, char c, int word_count)
 {
-	int	len;
 	int	i;
 	int	j;
+	int	l;
+	int	len;
 
 	i = 0;
-	while (i < word_count)
+	l = 0;
+	while (i < word_count && s[l])
 	{
-		while (*s == c)
-			s++;
-		len = ft_word_len(s, c);
-		result[i] = (char *)malloc(sizeof(char) * (len + 1));
-		if (!result[i])
-			return (ft_free(result, i));
-		j = 0;
-		while (j < len)
-			result[i][j++] = *s++;
-		result[i][j] = 0;
-		i++;
+		len = ft_wordlen(s, c, l);
+		l += len;
+		if (len != 0)
+		{
+			result[i] = (char *)malloc(sizeof(char) * (len + 1));
+			if (!result[i])
+				return (ft_free(result, i));
+			j = 0;
+			while (j < len)
+				result[i][j++] = *s++;
+			result[i][j] = 0;
+			i++;
+		}
+		l++;
 	}
 	result[i] = 0;
 	return (result);
