@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 14:22:47 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/23 15:58:27 by wolee            ###   ########seoul.kr  */
+/*   Created: 2021/11/23 16:21:09 by wolee             #+#    #+#             */
+/*   Updated: 2021/11/23 16:30:15 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*check;
+	t_list	*new;
 
-	if (!(*lst))
+	new = (t_list *)malloc(sizeof(t_list) * (ft_lstsize(lst) + 1));
+	if (!new)
+		return (0);
+	while (lst -> next)
 	{
-		check = new;
-		return ;
+		f(lst -> content);
+		new = lst;
+		del(lst -> content);
+		lst = lst -> next;
 	}
-	check = *lst;
-	while (check -> next)
-		check = check -> next;
-	check -> next = new;
-	new -> next = NULL;
+	free(lst);
+	return (new);
 }
