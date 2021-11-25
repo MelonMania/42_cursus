@@ -6,7 +6,7 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:11:32 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/23 16:31:47 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/25 23:26:15 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	while (lst -> next)
 	{
 		f(lst -> content);
-		lst = lst -> next;	
+		lst = lst -> next;
 	}	
 }

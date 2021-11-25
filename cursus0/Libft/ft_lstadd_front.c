@@ -6,7 +6,7 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:46:32 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/23 14:06:52 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/11/25 23:16:46 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!lst || !new)
-		return (0);
-	new -> next = *lst;
+	if (!new || !lst)
+		return ;
+	new->next = *lst;
 	*lst = new;
 }
