@@ -6,7 +6,7 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:21:09 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/23 16:30:15 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/12/19 19:50:01 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,20 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
+	t_list	*node;
 
-	new = (t_list *)malloc(sizeof(t_list) * (ft_lstsize(lst) + 1));
-	if (!new)
-		return (0);
-	while (lst -> next)
+	node = NULL;
+	while (lst)
 	{
-		f(lst -> content);
-		new = lst;
-		del(lst -> content);
+		new = ft_lstnew(f(lst -> content));
+		if (!new)
+		{
+			ft_lstclear(&node, del);
+			return (0);
+		}
+		ft_lstadd_back(&node, new);
 		lst = lst -> next;
 	}
-	free(lst);
-	return (new);
+	new = NULL;
+	return (node);
 }

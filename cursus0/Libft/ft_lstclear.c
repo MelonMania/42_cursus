@@ -6,7 +6,7 @@
 /*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:01:18 by wolee             #+#    #+#             */
-/*   Updated: 2021/11/25 23:40:14 by wolee            ###   ########seoul.kr  */
+/*   Updated: 2021/12/19 17:46:35 by wolee            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 	if (lst && del)
 	{
-		check  = *lst;
+		check = *lst;
 		while (*lst)
 		{
 			*lst = check -> next;
