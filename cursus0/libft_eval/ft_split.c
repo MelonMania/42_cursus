@@ -1,0 +1,101 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wolee <wolee@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/11 17:45:27 by wolee             #+#    #+#             */
+/*   Updated: 2022/02/10 03:01:47 by wolee            ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+static size_t	count_char(char const *s, char c)
+{
+	size_t	i;
+	size_t	count;
+
+	i = 0;
+	count = 0;
+	if (c == 0)
+		return (1);
+	while (s[i] != '\0')
+	{
+		if (s[i] != c)
+		{
+			count++;
+			i++;
+			while (s[i] != c && s[i] != '\0')
+				i++;
+		}
+		if (s[i] == '\0')
+			return (count);
+		i++;
+	}
+	return (count);
+}
+
+static char	*fill_word(char const *s, size_t *idx, char **tab)
+{
+	char	*word;
+	size_t	i;
+	size_t	len;
+
+	i = 0;
+	len = idx[0] - idx[1];
+	word = malloc(len + 1);
+	if (!word)
+	{
+		while (i < idx[2] - 1)
+			free(tab[i++]);
+		free(tab);
+		return (0);
+	}
+	while (i < len)
+	{
+		word[i] = s[i + idx[1]];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
+static void	ft_zero(size_t *idx)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < 3)
+		idx[i++] = 0;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**tab;
+	char	*word;
+	size_t	idx[3];
+
+	if (!s)
+		return (0);
+	ft_zero(idx);
+	tab = malloc(sizeof(char *) * (count_char(s, c) + 1));
+	if (!tab)
+		return (0);
+	while (idx[0] < ft_strlen(s))
+	{
+		while (s[idx[0]] != c && s[idx[0]] != '\0')
+			idx[0]++;
+		if ((int)(idx[0] - idx[1]) > 0)
+		{
+			word = fill_word(s, idx, tab);
+			if (!word)
+				return (0);
+			tab[idx[2]++] = word;
+		}
+		idx[1] = ++idx[0];
+	}
+	tab[idx[2]] = 0;
+	return (tab);
+}
